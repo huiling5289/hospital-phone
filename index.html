@@ -20,14 +20,12 @@
             background-attachment: scroll;   /* 手機上使用 scroll，避免固定背景的問題 */
             background-position: center;     /* 圖片置中 */
             min-height: 100vh;               /* 確保背景高度至少為視窗高度 */
-            display: flex;                   /* 使用 flexbox 將內容置中 */
-            flex-direction: column;
-            justify-content: center;
         }
 
+        /* 內容容器 */
         .container {
             max-width: 600px;
-            margin: auto;
+            margin: 20px auto 0;            /* 頂部保持適當的間距 */
             background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
             padding: 15px;
             border-radius: 8px;
@@ -78,7 +76,6 @@
             color: #888;
             text-align: center;
             margin-top: 15px;
-            margin-bottom: -10px;
         }
 
         .loading, .error, .no-results {
