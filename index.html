@@ -12,138 +12,145 @@
             padding: 0;
         }
 
-        /* 背景圖片樣式 */
         body {
-            background-image: url('background.jpg'); /* 替換為你的背景圖片路徑 */
-            background-size: cover;                /* 確保背景填滿頁面 */
-            background-repeat: no-repeat;          /* 禁止圖片重複 */
-            background-attachment: fixed;          /* 背景固定，適用桌面版 */
-            background-position: center;           /* 圖片置中 */
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            margin: 10px;
+            font-size: 18px;
+            background-image: url('517.jpg'); /* 替換為你的背景圖片路徑 */
+            background-size: cover;                /* 確保背景填滿頁面 */
+            background-repeat: no-repeat;          /* 禁止背景重複 */
+            background-position: center;           /* 背景置中 */
+            background-attachment: fixed;          /* 背景固定 */
         }
 
-        /* 內容容器 */
         .container {
-            max-width: 800px;                /* 寬度設置為 800px */
-            margin: 20px auto;               /* 距離頂部 20px，置中對齊 */
-            background-color: white;         /* 白色背景 */
-            padding: 30px;                   /* 增加內距 */
-            border-radius: 8px;              /* 增加圓角 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 增強陰影效果 */
+            max-width: 600px;
+            margin: 20px auto 0; /* 讓容器距離頂部 20px，置中對齊 */
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         h1 {
             text-align: center;
             color: #333;
-            font-size: 28px;                 /* 增加標題字體大小 */
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .search-container {
             display: flex;
             flex-direction: row;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         #searchInput {
             flex-grow: 1;
-            padding: 12px;                   /* 增加輸入框的內距 */
-            font-size: 16px;                 /* 增加輸入框字體大小 */
+            padding: 12px;
+            font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
         }
 
         #searchButton {
-            padding: 12px 20px;              /* 增加按鈕的內距 */
-            font-size: 16px;                 /* 增加按鈕字體大小 */
+            padding: 10px 15px;
+            font-size: 16px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
-            margin-left: 10px;
             cursor: pointer;
+            margin-left: 5px;
         }
 
         #searchButton:hover {
             background-color: #0056b3;
         }
 
+        .input-note {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
         .system-remark {
             font-size: 14px;
             color: #888;
             text-align: center;
-            margin-top: 10px;
-            margin-bottom: 20px;
+            margin-top: 15px;
+            margin-bottom: -10px;
+            padding: 5px;
         }
 
-        table {
+        #resultsTable {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
-        th, td {
+        #resultsTable th, #resultsTable td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 8px;
             text-align: left;
+            word-break: break-word;
+            font-size: 14px;
         }
 
-        th {
+        #resultsTable th {
             background-color: #f2f2f2;
+            color: #333;
+            font-size: 16px;
             font-weight: bold;
         }
 
-        tr:nth-child(even) {
+        #resultsTable tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
-        tr:hover {
-            background-color: #f1f1f1;
+        #resultsTable tr:hover {
+            background-color: #e9e9e9;
         }
 
-        .no-results {
+        .loading, .error, .no-results {
             text-align: center;
-            color: #555;
+            color: #777;
             margin-top: 20px;
             font-size: 16px;
+            padding: 10px;
         }
 
         .error {
-            text-align: center;
             color: red;
-            margin-top: 20px;
-            font-size: 16px;
             font-weight: bold;
+        }
+
+        .no-results {
+            color: #555;
         }
 
         /* 手機版樣式調整 */
         @media (max-width: 768px) {
-            body {
-                background-attachment: scroll; /* 手機版使用 scroll 背景 */
-            }
-
-            .container {
-                max-width: 90%;              /* 手機版最大寬度 */
-                padding: 20px;
-            }
-
             h1 {
                 font-size: 22px;
             }
-
             #searchInput {
+                padding: 10px;
                 font-size: 14px;
             }
-
             #searchButton {
+                padding: 8px 12px;
                 font-size: 14px;
             }
-
-            th, td {
-                font-size: 14px;
+            .input-note, .system-remark {
+                font-size: 12px;
+            }
+            #resultsTable th, #resultsTable td {
+                font-size: 12px;
+                padding: 6px;
             }
         }
     </style>
@@ -155,7 +162,6 @@
             <input type="text" id="searchInput" placeholder="輸入關鍵字 (姓名、單位或地點)" />
             <button id="searchButton">查詢</button>
         </div>
-
         <p class="system-remark">此系統僅供方便查詢使用，不作即時更新連動</p>
         <div id="resultsContainer"></div>
     </div>
@@ -165,17 +171,25 @@
         const searchButton = document.getElementById('searchButton');
         const resultsContainerDiv = document.getElementById('resultsContainer');
 
-        // 模擬的資料
-        const data = [
-            { name: "蔡珮容", department: "董事會秘書蔡珮容", mobile_short_code: "", extension: "1651" },
-            { name: "蔡珮容", department: "", mobile_short_code: "", extension: "1651" },
-            { name: "蔡珮容", department: "", mobile_short_code: "61651", extension: "" }
-        ];
+        // 載入資料
+        let data = [];
+        async function loadData() {
+            try {
+                const response = await fetch('data.json'); // 載入靜態 JSON 檔案
+                if (!response.ok) {
+                    throw new Error('無法載入資料');
+                }
+                data = await response.json();
+            } catch (error) {
+                console.error('載入資料時發生錯誤:', error);
+                resultsContainerDiv.innerHTML = `<p class="error">載入資料失敗: ${error.message}</p>`;
+            }
+        }
 
         // 查詢資料
         function performSearch() {
             const query = searchInput.value.trim().toLowerCase();
-            resultsContainerDiv.innerHTML = '';
+            resultsContainerDiv.innerHTML = '<p class="loading">查詢中...</p>'; // 顯示載入中提示
 
             if (!query) {
                 resultsContainerDiv.innerHTML = '<p class="no-results">請輸入查詢關鍵字。</p>';
@@ -189,8 +203,12 @@
                 (person.extension && person.extension.toLowerCase().includes(query))
             );
 
+            resultsContainerDiv.innerHTML = '';
+
             if (filteredResults.length > 0) {
                 const table = document.createElement('table');
+                table.id = 'resultsTable';
+
                 const thead = table.createTHead();
                 const headerRow = thead.insertRow();
                 const headers = ['姓名', '單位', '手機簡碼', '分機'];
@@ -222,6 +240,9 @@
                 performSearch();
             }
         });
+
+        // 初始化載入資料
+        loadData();
     </script>
 </body>
 </html>
