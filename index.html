@@ -14,14 +14,18 @@
 
         /* 背景圖片樣式 */
         body {
-            background-color: #f9f9f9;      /* 使用淺灰色背景 */
+            background-image: url('background.jpg'); /* 替換為你的背景圖片路徑 */
+            background-size: cover;                /* 確保背景填滿頁面 */
+            background-repeat: no-repeat;          /* 禁止圖片重複 */
+            background-attachment: fixed;          /* 背景固定，適用桌面版 */
+            background-position: center;           /* 圖片置中 */
             font-family: Arial, sans-serif;
             font-size: 16px;
         }
 
         /* 內容容器 */
         .container {
-            max-width: 800px;                /* 增加寬度 */
+            max-width: 800px;                /* 寬度設置為 800px */
             margin: 20px auto;               /* 距離頂部 20px，置中對齊 */
             background-color: white;         /* 白色背景 */
             padding: 30px;                   /* 增加內距 */
@@ -117,6 +121,10 @@
 
         /* 手機版樣式調整 */
         @media (max-width: 768px) {
+            body {
+                background-attachment: scroll; /* 手機版使用 scroll 背景 */
+            }
+
             .container {
                 max-width: 90%;              /* 手機版最大寬度 */
                 padding: 20px;
