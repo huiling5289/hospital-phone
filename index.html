@@ -99,6 +99,7 @@
             border-collapse: collapse;
             margin-top: 15px;
             border: 1px solid #ccc; /* 表格外框灰色細邊框 */
+            table-layout: fixed; /* 固定表格的欄位寬度 */
         }
 
         #resultsTable th, #resultsTable td {
@@ -139,6 +140,15 @@
             color: #555;
         }
 
+        /* 手機簡碼欄位固定寬度 */
+        #resultsTable th:nth-child(3), #resultsTable td:nth-child(3) {
+            width: 60px; /* 設定為剛好容納 5 個數字的寬度 */
+            text-align: center; /* 內容置中 */
+            overflow: hidden; /* 超過部分隱藏 */
+            white-space: nowrap; /* 禁止換行 */
+            text-overflow: ellipsis; /* 超出部分顯示省略號 */
+        }
+
         /* 手機版樣式調整 */
         @media (max-width: 768px) {
             .container {
@@ -165,7 +175,7 @@
             }
 
             #resultsTable th, #resultsTable td {
-                font-size: 13px;
+                font-size: 16px;
                 padding: 8px;
             }
         }
