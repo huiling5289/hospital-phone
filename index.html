@@ -99,7 +99,6 @@
             border-collapse: collapse;
             margin-top: 15px;
             border: 1px solid #ccc; /* 表格外框灰色細邊框 */
-            table-layout: fixed; /* 固定表格的欄位寬度 */
         }
 
         #resultsTable th, #resultsTable td {
@@ -127,7 +126,7 @@
             text-align: center;
             color: #777;
             margin-top: 20px;
-            font-size: 16px; /* 調整提示文字字體大小 */
+            font-size: 18px; /* 調整提示文字字體大小 */
             padding: 10px;
         }
 
@@ -138,15 +137,6 @@
 
         .no-results {
             color: #555;
-        }
-
-        /* 手機簡碼欄位固定寬度 */
-        #resultsTable th:nth-child(3), #resultsTable td:nth-child(3) {
-            width: 62px; /* 設定為剛好容納 5 個數字的寬度 */
-            text-align: center; /* 內容置中 */
-            overflow: hidden; /* 超過部分隱藏 */
-            white-space: nowrap; /* 禁止換行 */
-            text-overflow: ellipsis; /* 超出部分顯示省略號 */
         }
 
         /* 手機版樣式調整 */
@@ -175,7 +165,7 @@
             }
 
             #resultsTable th, #resultsTable td {
-                font-size: 16px;
+                font-size: 14px;
                 padding: 8px;
             }
         }
@@ -183,7 +173,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>電話查詢系統</h1>
+        <h1>電話查詢小幫手</h1>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="輸入關鍵字 (姓名、單位或地點)" />
             <button id="searchButton">查詢</button>
