@@ -15,7 +15,7 @@
         /* 預設背景樣式 (電腦版背景) */
         body {
             font-family: Arial, sans-serif;
-            font-size: 18px;
+            font-size: 18px; /* 全局字體大小 */
             background-image: url('517.jpg'); /* 電腦版背景圖片 */
             background-size: cover;
             background-repeat: no-repeat;
@@ -32,12 +32,12 @@
         }
 
         .container {
-            max-width: 800px; /* 增加容器寬度 */
+            max-width: 600px;
             margin: 20px auto 0;
             background-color: #fff;
-            padding: 30px; /* 增加內部填充 */
+            padding: 15px;
             border-radius: 8px; /* 保持圓角 */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* 增強陰影效果 */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 添加陰影效果 */
         }
 
         h1 {
@@ -45,45 +45,50 @@
             color: #333;
             font-size: 28px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .search-container {
             display: flex;
             flex-direction: row;
-            gap: 10px; /* 增加輸入框與按鈕之間的間距 */
             margin-bottom: 10px;
         }
 
         #searchInput {
             flex-grow: 1;
-            padding: 20px; /* 增加內部填充 */
-            font-size: 20px; /* 增加字體大小 */
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            font-size: 18px; /* 調整輸入框字體大小 */
+            border: 1px solid #ccc; /* 灰色邊框 */
+            border-radius: 2px;
             box-sizing: border-box;
-            width: calc(100% - 100px); /* 騰出按鈕所需空間 */
         }
 
         #searchButton {
-            padding: 20px; /* 增加按鈕內部填充 */
-            font-size: 20px; /* 增加字體大小 */
-            width: 100px; /* 固定按鈕寬度 */
+            padding: 10px 15px;
+            font-size: 18px; /* 調整按鈕字體大小 */
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-left: 5px;
         }
 
         #searchButton:hover {
             background-color: #0056b3;
         }
 
+        .input-note {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
         .system-remark {
             font-size: 16px;
             color: #888;
-            text-align: left;
+            text-align: left; /* 改為靠左對齊 */
             margin-top: 15px;
             margin-bottom: -10px;
             padding: 5px;
@@ -146,16 +151,16 @@
             }
 
             #searchInput {
-                padding: 15px;
-                font-size: 18px;
+                padding: 10px;
+                font-size: 16px;
             }
 
             #searchButton {
-                padding: 15px;
-                font-size: 18px;
+                padding: 8px 12px;
+                font-size: 16px;
             }
 
-            .system-remark {
+            .input-note, .system-remark {
                 font-size: 14px;
             }
 
